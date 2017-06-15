@@ -1,0 +1,10 @@
+/* 
+  Login.strings
+  Mezuka
+
+  Created by Hasan H. Topcu on 20/10/2016.
+  Copyright © 2016 Mezuka. All rights reserved.
+*/
+"Processing" = "Processing";
+"Username or password is incorrect" = "Username or password is incorrect";
+"Server related problem" = "Server related problem";

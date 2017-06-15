@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ssk-dY-piE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1um-vZ-zeV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ssk-dY-piE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JYc-qy-oRo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XtN-hg-wt7" kind="relationship" relationship="rootViewController" id="JfM-k5-VN1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCy-XG-VBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="-29"/>
+        </scene>
+        <!--Home View-->
+        <scene sceneID="udr-0o-7hP">
+            <objects>
+                <viewController storyboardIdentifier="HomeView" id="XtN-hg-wt7" customClass="HomeView" customModule="DressUpToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Dj-Sx-PKe"/>
+                        <viewControllerLayoutGuide type="bottom" id="7U0-aX-eWt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Mw-zz-sET">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jeans" translatesAutoresizingMaskIntoConstraints="NO" id="9Pb-17-uLq">
+                                <rect key="frame" x="16" y="289" width="343" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="7Fo-Sg-HkW"/>
+                                    <constraint firstAttribute="width" constant="343" id="sra-IQ-rak"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqH-ag-ZVA">
+                                <rect key="frame" x="16" y="507" width="170" height="35"/>
+                                <color key="backgroundColor" red="0.93390012256666666" green="0.0" blue="0.03116528495" alpha="0.74802011986301364" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="b5N-hw-P5p"/>
+                                    <constraint firstAttribute="width" constant="170" id="yVh-6a-r21"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="DISLIKE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDisLikeButtonTapped:" destination="XtN-hg-wt7" eventType="touchUpInside" id="nCx-rE-rxQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23m-n0-qSv">
+                                <rect key="frame" x="189" y="507" width="170" height="35"/>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.59999999999999998" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ilh-bg-O0R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveButtonTapped:" destination="XtN-hg-wt7" eventType="touchUpInside" id="6g3-08-wYo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L47-M0-Mgp">
+                                <rect key="frame" x="16" y="550" width="343" height="35"/>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.59999999999999998" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="sd3-0w-grt"/>
+                                    <constraint firstAttribute="height" constant="35" id="z2X-es-pvI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="ADD NEW">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddNewButtonTapped:" destination="XtN-hg-wt7" eventType="touchUpInside" id="PBw-cU-0S9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueT" translatesAutoresizingMaskIntoConstraints="NO" id="f4e-mp-kfy">
+                                <rect key="frame" x="16" y="106" width="343" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Zbz-ck-cq2"/>
+                                    <constraint firstAttribute="height" constant="183" id="rst-49-2w8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f4e-mp-kfy" firstAttribute="top" secondItem="4Dj-Sx-PKe" secondAttribute="bottom" constant="42" id="0kJ-Tj-Z8a"/>
+                            <constraint firstItem="7U0-aX-eWt" firstAttribute="top" secondItem="L47-M0-Mgp" secondAttribute="bottom" constant="82" id="2S0-tu-1hY"/>
+                            <constraint firstItem="LqH-ag-ZVA" firstAttribute="leading" secondItem="5Mw-zz-sET" secondAttribute="leading" constant="16" id="44v-e8-X33"/>
+                            <constraint firstItem="L47-M0-Mgp" firstAttribute="leading" secondItem="5Mw-zz-sET" secondAttribute="leading" constant="16" id="B82-eh-frg"/>
+                            <constraint firstAttribute="trailing" secondItem="L47-M0-Mgp" secondAttribute="trailing" constant="16" id="BEG-wg-cOU"/>
+                            <constraint firstAttribute="trailing" secondItem="9Pb-17-uLq" secondAttribute="trailing" constant="16" id="IoR-Zl-ZiU"/>
+                            <constraint firstAttribute="trailing" secondItem="23m-n0-qSv" secondAttribute="trailing" constant="16" id="N8h-jx-cJR"/>
+                            <constraint firstItem="23m-n0-qSv" firstAttribute="top" secondItem="9Pb-17-uLq" secondAttribute="bottom" constant="35" id="NxU-RQ-pfW"/>
+                            <constraint firstItem="9Pb-17-uLq" firstAttribute="leading" secondItem="5Mw-zz-sET" secondAttribute="leading" constant="16" id="d8h-Vl-A4V"/>
+                            <constraint firstItem="23m-n0-qSv" firstAttribute="leading" secondItem="LqH-ag-ZVA" secondAttribute="trailing" constant="3" id="k3h-3d-MJp"/>
+                            <constraint firstAttribute="trailing" secondItem="f4e-mp-kfy" secondAttribute="trailing" constant="16" id="oEi-DR-pvJ"/>
+                            <constraint firstItem="23m-n0-qSv" firstAttribute="width" secondItem="LqH-ag-ZVA" secondAttribute="width" id="tSG-0J-fKo"/>
+                            <constraint firstItem="f4e-mp-kfy" firstAttribute="leading" secondItem="5Mw-zz-sET" secondAttribute="leading" constant="16" id="upU-qE-w3N"/>
+                            <constraint firstItem="L47-M0-Mgp" firstAttribute="top" secondItem="23m-n0-qSv" secondAttribute="bottom" constant="8" id="yuK-oe-zPD"/>
+                            <constraint firstItem="9Pb-17-uLq" firstAttribute="top" secondItem="f4e-mp-kfy" secondAttribute="bottom" id="z4v-71-JuI"/>
+                            <constraint firstItem="LqH-ag-ZVA" firstAttribute="top" secondItem="9Pb-17-uLq" secondAttribute="bottom" constant="35" id="zNG-zh-ojO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dFp-2B-ufx"/>
+                    <connections>
+                        <outlet property="pantImageView" destination="9Pb-17-uLq" id="jYq-Qn-rDK"/>
+                        <outlet property="saveButton" destination="23m-n0-qSv" id="05Y-GT-R1m"/>
+                        <outlet property="shirtImageView" destination="f4e-mp-kfy" id="4Tc-fC-bd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9FA-ij-vWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608.79999999999995" y="-86.806596701649184"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blueT" width="225" height="225"/>
+        <image name="jeans" width="224" height="225"/>
+    </resources>
+</document>
