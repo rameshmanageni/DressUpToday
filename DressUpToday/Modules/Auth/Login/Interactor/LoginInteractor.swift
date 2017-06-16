@@ -12,10 +12,25 @@ final class LoginInteractor: LoginInteractorInputProtocol {
     init() {}
     
     func authenticateUser(model: LoginDomainModel) {
-        self.presenter?.onUserLoginSucceeded()
+        localDataManager?.authenticateUser(model: model, callback: { (result) in
+            switch result {
+            case .Failure:
+                self.presenter?.onUserLoginFailed()
+            case .Success:
+                self.presenter?.onUserLoginSucceeded()
+            default:
+                break
+            }
+        })
     }
     
     func isUserAlreadyLoggedIn() -> Bool {
       return (self.localDataManager?.isUserAlreadyLoggedIn())!
+    }
+    
+    func validateEmailAddress(text: String) -> Bool {
+        let emailValidator = EmailValidator()
+        let emailAccepted = emailValidator.isValid(text: text)
+        return emailAccepted
     }
 }

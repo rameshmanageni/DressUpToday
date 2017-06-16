@@ -34,4 +34,8 @@ final class JoinWireFrame: JoinWireFrameProtocol {
     func navigateToLoginModule() {
         (view?.parent as! UINavigationController).popViewController(animated: false)
     }
+    
+    func navigateToHomeModule() {
+        (view?.parent as! UINavigationController).popViewController(animated: false)
+    }
 }

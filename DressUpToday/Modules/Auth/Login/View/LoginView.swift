@@ -18,6 +18,9 @@ final class LoginView: UIViewController, LoginViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loginButton.isEnabled = false
+        self.loginButton.backgroundColor = UIColor.mezukaPassiveGreen
+
         self.emailLabel.setTextChangedAction {
             self.presenter?.notifyTextChangedInTextFields()
         }
@@ -32,6 +35,7 @@ final class LoginView: UIViewController, LoginViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.presenter?.notifyViewDidLoad()
     }
     
     func getLoginViewModel() -> LoginViewModel {
@@ -61,6 +65,11 @@ final class LoginView: UIViewController, LoginViewProtocol {
     }
     
     @IBAction func onLoginButtonTapped(_ sender: AnyObject) {
+        self.emailLabel.clearText()
+        self.passwordLabel.clearText()
+        self.loginButton.isEnabled = false
+        self.loginButton.backgroundColor = UIColor.mezukaPassiveGreen
+        self.view.endEditing(true)
         presenter?.notifyLoginButtonTapped()
     }
     
@@ -71,5 +80,4 @@ final class LoginView: UIViewController, LoginViewProtocol {
     func displayErrorMessage(message: String) {
         //self.showStylishErrorMessage(message: message)
     }
-    
 }

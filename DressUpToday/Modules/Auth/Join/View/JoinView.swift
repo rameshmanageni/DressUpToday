@@ -17,9 +17,6 @@ final class JoinView: UIViewController, JoinViewProtocol {
     @IBOutlet weak var joinButton: UIButton!
     
     override func viewDidLoad() {
-        //self.activateHamburgerIcon()
-        //self.activateMyOrderIcon()
-        //self.activateSearchIcon()
         self.joinButton.isEnabled = false
         self.hideKeyboardWhenTappedAround()
         for textField in textFields { textField.setBottomBorder() }

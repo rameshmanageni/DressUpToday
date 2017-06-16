@@ -25,6 +25,7 @@ protocol JoinWireFrameProtocol: class {
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
     func navigateToLoginModule()
+    func navigateToHomeModule()
 }
 
 protocol JoinPresenterProtocol: class {
@@ -38,17 +39,14 @@ protocol JoinPresenterProtocol: class {
     func notifyTextChangedInTextFields()
     func notifyLoginButtonTapped()
     func notifyJoinButtonTapped()
-//    func notifyTermsOfServicesTapped()
-//    func notifyFacebookButtonTapped()
-//    func notifyGooglePlusButtonTapped()
 }
 
 protocol JoinInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
-   // func onJoinNewUserSucceeded()
-    //func onJoinNewUserFailed(error: EApiErrorType)
+    func onJoinNewUserSucceeded()
+    func onJoinNewUserFailed()
 }
 
 protocol JoinInteractorInputProtocol: class {
@@ -58,11 +56,12 @@ protocol JoinInteractorInputProtocol: class {
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
     func validateEmailAddress(text: String) -> Bool
-//    func joinNewUser(model: JoinViewModel)
+    func joinNewUser(model: JoinViewModel)
 }
 
 protocol JoinLocalDataManagerInputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> LOCALDATAMANAGER
     */
+    func joinNewUser(model: JoinViewModel, callback: @escaping (ECallbackResultType) -> Void)
 }

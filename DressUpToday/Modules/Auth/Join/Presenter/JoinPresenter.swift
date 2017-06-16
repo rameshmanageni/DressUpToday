@@ -45,14 +45,12 @@ final class JoinPresenter: JoinPresenterProtocol, JoinInteractorOutputProtocol {
     }
     
     func notifyJoinButtonTapped() {
-        DispatchQueue.global().async {
             let viewModel = self.view?.getJoinViewModel()
             
-//            if(viewModel != nil) {
-//                let model = JoinViewModel(firstName: (viewModel?.firstName)!, lastName: (viewModel?.lastName)!, email: (viewModel?.email)!, password: (viewModel?.password)!)
-//                self.interactor?.joinNewUser(model: model)
-//            }
-        }
+            if(viewModel != nil) {
+                let model = JoinViewModel(firstName: (viewModel?.firstName)!, lastName: (viewModel?.lastName)!, email: (viewModel?.email)!, password: (viewModel?.password)!)
+                self.interactor?.joinNewUser(model: model)
+            }
     }
     
     func notifyTermsOfServicesTapped() {
@@ -67,13 +65,12 @@ final class JoinPresenter: JoinPresenterProtocol, JoinInteractorOutputProtocol {
         
     }
     
-//    func onJoinNewUserSucceeded() {
-//        let message = "Welcome to Mezuka".localized(in: "JoinView")
-//        view?.displaySucceededMessage(message: message)
-//    }
-//    
-//    func onJoinNewUserFailed(error: EApiErrorType) {
+    func onJoinNewUserSucceeded() {
+        wireFrame?.navigateToHomeModule()
+    }
+    
+    func onJoinNewUserFailed() {
 //        let message = "Server related problem".localized(in: "JoinView")
 //        view?.displayErrorMessage(message: message)
-//    }
+    }
 }

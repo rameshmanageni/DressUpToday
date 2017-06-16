@@ -7,8 +7,14 @@ import Foundation
 
 final class LoginLocalDataManager: LoginLocalDataManagerInputProtocol {
     init() {}
+    let defaults = UserDefaults.standard
     
     func isUserAlreadyLoggedIn() -> Bool {
-        return true
+        return defaults.value(forKey: "isUserAlreadyLoggedIn") as! Bool
+    }
+    
+    func authenticateUser(model: LoginDomainModel, callback: @escaping (ECallbackResultType) -> Void) {
+        defaults.set(true, forKey: "isUserAlreadyLoggedIn")
+        callback(.Success)
     }
 }

@@ -59,6 +59,7 @@ protocol LoginInteractorInputProtocol: class {
     */
     func authenticateUser(model: LoginDomainModel)
     func isUserAlreadyLoggedIn() -> Bool
+    func validateEmailAddress(text: String) -> Bool
 }
 
 protocol LoginLocalDataManagerInputProtocol: class {
@@ -66,4 +67,5 @@ protocol LoginLocalDataManagerInputProtocol: class {
     * Add here your methods for communication INTERACTOR -> LOCALDATAMANAGER
     */
     func isUserAlreadyLoggedIn() -> Bool
+    func authenticateUser(model: LoginDomainModel, callback: @escaping (ECallbackResultType) -> Void)
 }

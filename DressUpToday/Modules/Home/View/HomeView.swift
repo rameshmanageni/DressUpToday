@@ -12,11 +12,11 @@ final class HomeView: UIViewController, HomeViewProtocol {
     @IBOutlet weak var pantImageView: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
     var presenter: HomePresenterProtocol?
-    var videoDetailsModelArray = [HomeViewOutputModel]()
-    var pageNumber: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activateMySavedPairIcon()
+        self.activateLogoutIcon()
         self.presenter?.notifyViewDidLoad()
     }
     

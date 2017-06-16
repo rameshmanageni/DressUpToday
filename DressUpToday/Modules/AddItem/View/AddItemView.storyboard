@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ssk-dY-piE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1um-vZ-zeV">
+            <objects>
+                <navigationController storyboardIdentifier="StoryboardAddItemViewNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ssk-dY-piE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JYc-qy-oRo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EM9-QV-mhj" kind="relationship" relationship="rootViewController" id="lTA-LB-kMg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCy-XG-VBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.39999999999998" y="133.5832083958021"/>
+        </scene>
+        <!--Add Item View-->
+        <scene sceneID="c0x-K6-9xG">
+            <objects>
+                <viewController storyboardIdentifier="AddItemView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EM9-QV-mhj" customClass="AddItemView" customModule="DressUpToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fwy-O5-Rei"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzM-Mf-lAo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QD5-6m-jQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="4KS-2s-hKb">
+                                <rect key="frame" x="112" y="278" width="150" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="das-MO-0l1">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                        <state key="normal" title="Add Pants"/>
+                                        <connections>
+                                            <action selector="addItemButtonClicked:" destination="EM9-QV-mhj" eventType="touchUpInside" id="fpS-eS-jVM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ne-gd-C43">
+                                        <rect key="frame" x="0.0" y="80" width="150" height="30"/>
+                                        <state key="normal" title="Add Shirts"/>
+                                        <connections>
+                                            <action selector="addItemButtonClicked:" destination="EM9-QV-mhj" eventType="touchUpInside" id="O6d-iY-6t5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="yfa-Oc-PBt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4KS-2s-hKb" firstAttribute="centerX" secondItem="QD5-6m-jQd" secondAttribute="centerX" id="YJA-1f-1UM"/>
+                            <constraint firstItem="4KS-2s-hKb" firstAttribute="centerY" secondItem="QD5-6m-jQd" secondAttribute="centerY" id="aPr-vd-EjA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sbl-QK-9WX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aC-MZ-kEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="134"/>
+        </scene>
+    </scenes>
+</document>

@@ -9,7 +9,8 @@ final class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtoco
     weak var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
     var wireFrame: LoginWireFrameProtocol?
-    
+    var emailAccepted = false
+
     init() {}
     
     func notifyViewDidLoad() {
@@ -37,7 +38,12 @@ final class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtoco
             let email = viewModel?.email
             let password = viewModel?.password
             
-            if ((email?.isEmpty)! == false && (password?.isEmpty)! == false) {
+            emailAccepted = (interactor?.validateEmailAddress(text: email!))!
+            if(!emailAccepted) {
+                let message = "inValid Email ID".localized(in: "JoinView")
+                view?.displayErrorMessage(message: message)
+            }
+            if ((email?.isEmpty)! == false && (password?.isEmpty)! == false && self.emailAccepted) {
                 view?.activateLoginButton()
             } else {
                 view?.deactivateLoginButton()
@@ -61,7 +67,7 @@ final class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtoco
         // Convert Domain Model to View Model
         // Send to wireframe to route somewhere else
         print("Hey you logged in")
-        view?.navigateBackToViewController()
+        wireFrame?.navigateToHomeModule()
     }
     
     func onUserLoginFailed() {

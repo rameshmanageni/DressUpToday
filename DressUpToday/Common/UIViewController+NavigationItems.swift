@@ -10,13 +10,6 @@ import UIKit
 
 extension UIViewController {
     
-    func activateHamburgerIcon() {
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Hamburger")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onHamburgerMenuBarTapped))
-        
-        self.navigationItem.leftBarButtonItem = leftButton
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.mezukaNavigationBarButton
-    }
-    
     func activateBackIcon() {
         let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "back")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onBackBarTapped))
         
@@ -25,8 +18,8 @@ extension UIViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.mezukaNavigationBarButton
     }
     
-    func activateSearchIcon() {
-        let rightButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onSearchMenuBarTapped))
+    func activateMySavedPairIcon() {
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "bag")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onMySavedPairMenuBarTapped))
         rightButton.tintColor = UIColor.mezukaNavigationBarButton
         
         if var items = self.navigationItem.rightBarButtonItems {
@@ -37,8 +30,8 @@ extension UIViewController {
         }
     }
     
-    func activateMyOrderIcon() {
-        let rightButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "bag")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onMyOrderMenuBarTapped))
+    func activateLogoutIcon() {
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "logout")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onLogoutMenuBarTapped))
         rightButton.tintColor = UIColor.mezukaNavigationBarButton
         
         if var items = self.navigationItem.rightBarButtonItems {
@@ -48,20 +41,33 @@ extension UIViewController {
             self.navigationItem.rightBarButtonItem = rightButton
         }
     }
-    
-    func onHamburgerMenuBarTapped() {
-       //JoinWireFrame.sharedInstance.openMenu()
-    }
-    
+
     func onBackBarTapped() {
         (self.parent as! UINavigationController).popViewController(animated: true)
     }
     
-    func onSearchMenuBarTapped() {
-        //MenuWireFrame.sharedInstance.navigateToSearchView()
+    func onMySavedPairMenuBarTapped() {
+       let savedPairView = SavedPairWireFrame.setupSavedPairModule()
+        (self.parent as! UINavigationController).pushViewController(savedPairView, animated: true)
     }
     
-    func onMyOrderMenuBarTapped() {
-        //MenuWireFrame.sharedInstance.presentMyOrderView()
+    func onLogoutMenuBarTapped() {
+        self.askForLogoutIfUserIsSure()
+    }
+    
+    func askForLogoutIfUserIsSure() {
+        let message = "Are you sure?".localized(in: "Login")
+        let cancel = "Cancel".localized(in: "Cancel")
+        let logout = "Log out".localized(in: "Log out")
+        
+        let logoutAlert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        logoutAlert.addAction(UIAlertAction(title: cancel, style: .default, handler: nil))
+        logoutAlert.addAction(UIAlertAction(title: logout, style: .default, handler: { (action: UIAlertAction!) in
+            UserDefaults.standard.set(false, forKey: "isUserAlreadyLoggedIn")
+            (self.parent as! UINavigationController).popToRootViewController(animated: false)
+        }))
+        
+        self.present(logoutAlert, animated: true, completion: nil)
     }
 }

@@ -168,7 +168,14 @@ import Foundation
             return ""
         }
     }
-    
+   
+    /**
+     Clear text of the MapiaTextField
+     */
+    func clearText() {
+        self.uiTextField.text = ""
+    }
+
     /**
      Set text of the MapiaTextField and adjusts validation button
      - parameters:

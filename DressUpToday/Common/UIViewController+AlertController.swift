@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import MBProgressHUD
+import MBProgressHUD
 
 extension UIViewController {
     
@@ -55,54 +55,54 @@ extension UIViewController {
         self.present(alertMessage, animated: true, completion: nil)
     }
     
-//    func showStylishSuccessMessage(message: String) {
-//        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
-//        
-//        progressHUD!.mode = .text
-//        progressHUD?.label.numberOfLines = 2
-//        progressHUD!.bezelView.color = UIColor.mezukaSuccessGreen
-//        progressHUD!.label.font = UIFont(name: "SF UI Text Semibold", size: 16)
-//        progressHUD!.label.text = message
-//        progressHUD!.label.textColor = UIColor.white
-//        progressHUD?.hide(animated: true, afterDelay: 2.0)
-//    }
-//    
-//    /**
-//     This method show an iOS styled Alert View for failed actions
-//     - parameters:
-//        - message: The message to be displayed in the alert view
-//     */
-//    func showErrorMessage(message: String) {
-//        let title = NSLocalizedString("Error", comment : "Error")
-//        let action = NSLocalizedString("Ok", comment : "Ok")
-//        
-//        // Warn the user
-//        let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        
-//        alertMessage.addAction(UIAlertAction(title: action, style: .default, handler: nil))
-//        
-//        self.present(alertMessage, animated: true, completion: nil)
-//    }
-//    
-//    func showStylishErrorMessage(message: String) {
-//        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
-//        
-//        progressHUD!.mode = .text
-//        progressHUD!.bezelView.color = UIColor.mezukaErrorRed
-//        progressHUD!.label.font = UIFont(name: "SF UI Text Semibold", size: 16)
-//        progressHUD!.label.text = message
-//        progressHUD!.label.textColor = UIColor.white
-//        
-//        progressHUD?.hide(animated: true, afterDelay: 2.0)
-//    }
-//    
-//    func displayProgress(message: String) {
-//        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
-//        progressHUD!.label.text = message
-//    }
-//    
-//    func dismissProgress() {
-//        MBProgressHUD.hide(for: self.view, animated: true)
-//    }
+    func showStylishSuccessMessage(message: String) {
+        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        progressHUD!.mode = .text
+        progressHUD?.label.numberOfLines = 2
+        progressHUD!.bezelView.color = UIColor.mezukaSuccessGreen
+        progressHUD!.label.font = UIFont(name: "SF UI Text Semibold", size: 16)
+        progressHUD!.label.text = message
+        progressHUD!.label.textColor = UIColor.white
+        progressHUD?.hide(animated: true, afterDelay: 2.0)
+    }
+    
+    /**
+     This method show an iOS styled Alert View for failed actions
+     - parameters:
+        - message: The message to be displayed in the alert view
+     */
+    func showErrorMessage(message: String) {
+        let title = NSLocalizedString("Error", comment : "Error")
+        let action = NSLocalizedString("Ok", comment : "Ok")
+        
+        // Warn the user
+        let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertMessage.addAction(UIAlertAction(title: action, style: .default, handler: nil))
+        
+        self.present(alertMessage, animated: true, completion: nil)
+    }
+    
+    func showStylishErrorMessage(message: String) {
+        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        progressHUD!.mode = .text
+        progressHUD!.bezelView.color = UIColor.mezukaErrorRed
+        progressHUD!.label.font = UIFont(name: "SF UI Text Semibold", size: 16)
+        progressHUD!.label.text = message
+        progressHUD!.label.textColor = UIColor.white
+        
+        progressHUD?.hide(animated: true, afterDelay: 2.0)
+    }
+    
+    func displayProgress(message: String) {
+        let progressHUD: MBProgressHUD? = MBProgressHUD.showAdded(to: self.view, animated: true)
+        progressHUD!.label.text = message
+    }
+    
+    func dismissProgress() {
+        MBProgressHUD.hide(for: self.view, animated: true)
+    }
     
 }

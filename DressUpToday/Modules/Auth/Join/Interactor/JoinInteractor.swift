@@ -18,13 +18,13 @@ final class JoinInteractor: JoinInteractorInputProtocol {
     }
     
     func joinNewUser(model: JoinViewModel) {
-//        APIDataManager?.joinNewUser(model: model, callback: { (result) in
-//            switch result {
-//            case .Failure(let error):
-//                self.presenter?.onJoinNewUserFailed(error: error)
-//            case .Success:
-//                    self.presenter?.onJoinNewUserSucceeded()
-//            }
-//        })
+        localDataManager?.joinNewUser(model: model, callback: { (result) in
+            switch result {
+            case .Failure:
+                self.presenter?.onJoinNewUserFailed()
+            case .Success:
+                self.presenter?.onJoinNewUserSucceeded()
+            }
+        })
     }
 }
